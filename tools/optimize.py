@@ -53,6 +53,10 @@ def process(path):
     s = s.replace('<form class="form" action="mailto:kontakt@avloppfav.se" method="post" enctype="text/plain">', '<form class="form" data-mailto="kontakt@avloppfav.se">')
     # 6. Rubrikordning i footer
     s = re.sub(r'<h4>([^<]*)</h4>', r'<h2 class="ft-h">\1</h2>', s)
+    # 8. <main>-landmärke
+    if '<main' not in s:
+        s = s.replace('</header>', '</header><main id="main">', 1)
+        s = s.replace('<footer', '</main><footer', 1)
     # 7. tel-länk med mellanslag
     s = s.replace('tel:+46316001 62', 'tel:+4631600162')
     open(path, 'w').write(s)
