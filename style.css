@@ -71,3 +71,47 @@ img{max-width:100%;display:block}
 .scroll-cue span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;background:#fff;border-radius:2px;animation:cue 1.6s infinite}
 @keyframes cue{to{transform:translateY(16px);opacity:0}}
 @media (prefers-reduced-motion:reduce){.hero-in{animation:none;opacity:1;transform:none}}
+
+/* === Avloppsteknik Väst: rättningar och nya sektioner === */
+/* Ersätter den tunna konturfonten med solid accentfärg */
+.hero-title .accent{color:var(--accent);-webkit-text-stroke:0}
+.hero-title{text-transform:none;letter-spacing:-.035em;font-size:clamp(2.8rem,8vw,7rem)}
+.demo-banner{display:none}
+.logo img{width:36px;height:36px;object-fit:contain}
+.site-header:not(.solid) .logo img{filter:brightness(0) invert(1)}
+.intro{max-width:640px;margin:-1.5rem 0 2.5rem;color:#0b1f33b3}
+.section .eyebrow{margin-bottom:.6rem}
+.project{aspect-ratio:3/4}
+.project p{font-size:.92rem;opacity:.85;margin-top:.4rem}
+.project div{background:linear-gradient(0deg,#000c 30%,#0000)}
+.card.wide{margin-top:1.5rem}
+.split-rev{background:#fff}
+.split h2{margin-bottom:1.2rem}
+.why{background:var(--ink);color:#fff;padding:6rem 5vw}
+.why h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:.6rem 0 3rem}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.5rem}
+.why-grid div{border-top:2px solid var(--accent);padding-top:1.2rem}
+.why-grid p{opacity:.75;margin-top:.5rem}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}
+.steps span{font-family:Manrope;font-weight:800;font-size:2.6rem;color:var(--accent);display:block;line-height:1}
+.steps h3{margin:.8rem 0 .4rem}
+.faq{max-width:900px;padding-top:2rem}
+.faq details{border-bottom:1px solid #0002;padding:1.2rem 0}
+.faq summary{cursor:pointer;font-family:Manrope;font-weight:600;font-size:1.15rem;list-style:none;display:flex;justify-content:space-between}
+.faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--accent)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:.8rem;color:#0b1f33c0}
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;padding:7rem 5vw;background:var(--soft)}
+.contact h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:.6rem 0 1rem}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.5rem;margin-top:2rem}
+.contact dt{font-weight:600}
+.contact dd{margin:0}
+.contact dd a:hover{color:var(--accent)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;background:#fff;padding:2rem;border-radius:var(--radius)}
+.form label{display:flex;flex-direction:column;gap:.35rem;font-size:.9rem;font-weight:500}
+.form input,.form select,.form textarea{font:inherit;padding:.75rem .9rem;border:1px solid #0b1f3330;border-radius:8px;background:#fff}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.form .full{grid-column:1/-1}
+.form button{border:0;cursor:pointer;font:inherit;font-weight:600}
+.footer{padding-bottom:4rem}
+@media (max-width:800px){.contact{grid-template-columns:1fr}.form{grid-template-columns:1fr}}
