@@ -115,3 +115,30 @@ img{max-width:100%;display:block}
 .form button{border:0;cursor:pointer;font:inherit;font-weight:600}
 .footer{padding-bottom:4rem}
 @media (max-width:800px){.contact{grid-template-columns:1fr}.form{grid-template-columns:1fr}}
+
+/* === Valda varianter: Varför B, Mini B, Steg D, FAQ B, Footer A+E === */
+.sec{padding:5.5rem 5vw}.sec h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:2.5rem}
+.sec.dark{background:var(--ink);color:#fff}.sec.soft{background:var(--soft)}
+.wB{display:grid;grid-template-columns:1fr 1fr;gap:3rem 5rem}.wB span{font-family:Manrope;font-weight:800;font-size:4rem;color:#0b1f3315;line-height:1;display:block}
+.wB h3{font-size:1.5rem;margin:-.6rem 0 .5rem}
+.wB,.wD,.wE,.sC,.sD,.sE,.hD .bar{grid-template-columns:1fr 1fr}.hE .coll{grid-template-columns:1fr}.hE img{height:220px}.oE .imgs{height:360px}.oE .imgs img{height:260px}}
+.mB{min-height:75vh;background:linear-gradient(90deg,#0b1f33f5,#0b1f3360),var(--img) center/cover;color:#fff;display:flex;align-items:center;padding:4rem 5vw}
+.mB div{max-width:620px}.mB h2{font-size:clamp(2rem,4.5vw,3.4rem);margin:.6rem 0 1rem}.mB p{margin-bottom:2rem;opacity:.9}
+.sD{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}.sD li{padding:2rem;border-left:1px solid #fff3}
+.sD span{font-family:Manrope;font-weight:800;font-size:5rem;line-height:1;color:var(--accent)}.sD h3{margin:1rem 0 .5rem}.sD p{opacity:.7}
+.fB{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem}.fB h2{margin-bottom:1rem}
+.ftE .giant{font-family:Manrope;font-weight:800;font-size:10.5vw;line-height:.8;letter-spacing:-.05em;margin-top:3rem;color:var(--accent);white-space:nowrap}
+.sec .eyebrow{margin-bottom:.6rem}
+.wB a,.fB a{color:var(--accent)}
+.mB{background-size:cover;background-position:center}
+.ftAE{overflow:hidden;padding-bottom:0}
+.ftAE .giant{grid-column:1/-1;margin-top:1rem;font-size:10.5vw}
+.offert{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;padding:6rem 5vw;background:var(--soft)}
+.offert h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:.6rem 0 1rem}
+.offert .big{display:block;font-family:Manrope;font-weight:800;font-size:2rem;color:var(--accent);margin-top:1.5rem}
+@media (max-width:900px){.wB,.sD{grid-template-columns:1fr 1fr}.fB,.offert{grid-template-columns:1fr}}
+.ftAE .giant{font-family:Manrope;font-weight:800;font-size:10.5vw;line-height:.8;letter-spacing:-.05em;color:var(--accent);white-space:nowrap;margin:3rem 0 0}
+.mB{min-height:75vh;color:#fff;display:flex;align-items:center;padding:5rem 5vw}
+.mB>div{max-width:640px}
+.mB h2{font-size:clamp(2rem,4.5vw,3.4rem);margin:.6rem 0 1rem}
+.mB p{margin-bottom:2rem;opacity:.92}

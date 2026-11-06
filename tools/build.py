@@ -70,10 +70,10 @@ def header(base, solid=True):
 <button class="burger" id="burger" aria-label="Meny">☰</button></header>'''
 
 def footer(base):
-    return f'''<footer class="footer"><div><strong>Fastighet &amp; Avloppsteknik Väst AB</strong><p>Avloppsteknik, VA-installationer och avloppsrening med bas i Skepplanda, Västra Götaland.</p><p>Org.nr 559368-4011</p></div>
+    return f'''<footer class="footer ftAE"><div><strong>Fastighet &amp; Avloppsteknik Väst AB</strong><p>Avloppsteknik, VA-installationer och avloppsrening med bas i Skepplanda, Västra Götaland.</p><p>Org.nr 559368-4011</p></div>
 <div><h4>Tjänster</h4>{''.join(f'<a href="{base}tjanster/{s["slug"]}.html">{s["name"]}</a>' for s in SERVICES)}</div>
 <div><h4>Kontakt</h4><p>Andreas Landström</p><a href="tel:+4631600162">Tel {TEL}</a><a href="tel:+46709149718">Mobil {MOB}</a><a href="mailto:{MAIL}">{MAIL}</a><p>{ADR}</p></div>
-<p class="fine">© 2026 Fastighet &amp; Avloppsteknik Väst AB · Webbplats av Elevate Studio</p></footer>
+<p class="fine">© 2026 Fastighet &amp; Avloppsteknik Väst AB · Webbplats av Elevate Studio</p><div class="giant">Avloppsteknik Väst</div></footer>
 <script src="{base}script.js"></script></body></html>'''
 
 def pagehero(base, eyebrow, title, lead, img, crumbs):
@@ -82,15 +82,14 @@ def pagehero(base, eyebrow, title, lead, img, crumbs):
 <nav class="crumbs">{c}</nav><p class="eyebrow">{eyebrow}</p><h1>{title}</h1><p class="lead">{lead}</p>
 <div class="hero-cta"><a href="{base}kontakt.html" class="btn btn-lg">Begär offert →</a><a href="tel:+4631600162" class="btn btn-ghost btn-lg">Ring {TEL}</a></div></div></section>'''
 
-def cta(base):
-    return f'''<section class="cta-band"><div><h2>Behöver du hjälp med ditt avlopp?</h2><p>Beskriv ditt ärende så återkommer vi.</p></div>
-<div class="hero-cta"><a href="{base}kontakt.html" class="btn btn-lg">Skicka förfrågan</a><a href="tel:+46709149718" class="btn btn-outline-light btn-lg">{MOB}</a></div></section>'''
+def cta(base, selected=""):
+    return f'''<section class="offert" id="offert"><div><p class="eyebrow">Offertförfrågan</p><h2>Begär offert</h2><p>Beskriv ditt ärende så återkommer vi. Du kan också ringa oss direkt.</p><a class="big" href="tel:+4631600162">{TEL}</a><p>Mobil {MOB} · <a href="mailto:{MAIL}">{MAIL}</a></p></div>{form_html(selected).replace("Skicka förfrågan","Skicka offertförfrågan")}</section>'''
 
 def faq_html(items):
     return ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q,a in items)
 
 def steps_html():
-    return '<ol class="steps">' + ''.join(f'<li class="reveal"><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></li>' for i,(t,d) in enumerate(STEPS)) + '</ol>'
+    return '<ol class="sD">' + ''.join(f'<li class="reveal"><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></li>' for i,(t,d) in enumerate(STEPS)) + '</ol>'
 
 def form_html(selected=""):
     opts = ''.join(f'<option{" selected" if s["name"]==selected else ""}>{s["name"]}</option>' for s in SERVICES) + '<option>Övrigt</option>'
@@ -114,8 +113,8 @@ for i,s in enumerate(SERVICES):
 <h3>När kan det vara aktuellt?</h3><ul class="checks">{''.join(f"<li>{x}</li>" for x in s["when"])}</ul></article>
 <aside class="svc-side reveal"><div class="side-card"><h3>Kontakta oss</h3><p>Andreas Landström</p><a class="big" href="tel:+4631600162">{TEL}</a><a href="tel:+46709149718">Mobil {MOB}</a><a href="mailto:{MAIL}">{MAIL}</a><a href="{b}kontakt.html" class="btn full">Begär offert</a></div>
 <div class="side-card light"><h3>Övriga tjänster</h3>{''.join(f'<a href="{o["slug"]}.html">{o["name"]} →</a>' for o in others)}</div></aside></section>
-<section class="section"><p class="eyebrow">Arbetsgång</p><h2>Så går det till</h2>{steps_html()}</section>
-<section class="section faq"><h2>Vanliga frågor</h2>{faq_html(rel)}</section>''' + cta(b) + footer(b))
+<section class="sec dark"><p class="eyebrow">Arbetsgång</p><h2>Så går det till</h2>{steps_html()}</section>
+<section class="sec"><div class="fB"><div><h2>Vanliga frågor</h2><p>Hittar du inte svaret? Ring <a href="tel:+4631600162">{TEL}</a>.</p></div><div class="faq">{faq_html(rel)}</div></div></section>''' + cta(b, s['name']) + footer(b))
 
 # --- Tjänster översikt
 b=""
@@ -127,7 +126,7 @@ w("tjanster.html", head("Tjänster – Fastighet & Avloppsteknik Väst AB","Vår
 w("om-oss.html", head("Om oss – Fastighet & Avloppsteknik Väst AB","Avloppsteknik med bas i Skepplanda.",b) + header(b) +
   pagehero(b,"Om oss","Din partner inom avloppsteknik","Fastighet &amp; Avloppsteknik Väst AB arbetar med installation, renovering, inspektion och underhåll av avloppssystem.","arbete-maskiner.jpg",[("Start","index.html"),("Om oss",None)]) +
   f'''<section class="split"><div class="reveal"><h2>Lokalt företag i Skepplanda</h2><p>Fastighet &amp; Avloppsteknik Väst AB är ett företag med bas i Skepplanda som arbetar med installation, renovering, inspektion och underhåll av avloppssystem.</p><p>Vi hjälper fastighetsägare att hitta fungerande lösningar för vatten och avlopp, oavsett om det handlar om att undersöka ett befintligt system eller installera en ny avloppsanläggning.</p></div><img class="reveal" src="assets/arbete-graevning.jpg" alt=""></section>
-<section class="why"><p class="eyebrow">Varför välja oss</p><h2>Rätt lösning för ditt avloppssystem</h2><div class="why-grid">{''.join(f'<div class="reveal"><h3>{t}</h3><p>{d}</p></div>' for t,d in WHY)}</div></section>
+<section class="sec"><p class="eyebrow">Varför välja oss</p><h2>Rätt lösning för ditt avloppssystem</h2><div class="wB">{''.join(f'<div class="reveal"><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></div>' for i,(t,d) in enumerate(WHY))}</div></section>
 <section class="section"><div class="facts"><div><span>Bas</span><strong>Skepplanda</strong></div><div><span>Område</span><strong>Västsverige</strong></div><div><span>Återförsäljare</span><strong>BioKube</strong></div><div><span>Kontaktperson</span><strong>Andreas Landström</strong></div></div></section>
 <section class="gallery">{''.join(f'<img class="reveal" src="assets/{x}" alt="">' for x in ["arbete-jordkallare.jpg","arbete-ledningar.jpg","filmning.jpg","service.jpg"])}</section>''' + cta(b) + footer(b))
 
@@ -136,13 +135,13 @@ w("minireningsverk.html", head("Minireningsverk – Fastighet & Avloppsteknik V�
   pagehero(b,"Minireningsverk · BioKube-återförsäljare","Moderna lösningar för enskilt avlopp","Ett minireningsverk kan vara en effektiv lösning för fastigheter som saknar anslutning till kommunalt avlopp.","biokube.jpg",[("Start","index.html"),("Minireningsverk",None)]) +
   f'''<section class="split"><div class="reveal"><h2>Vad är ett minireningsverk?</h2><p>Ett minireningsverk är en anläggning som renar avloppsvatten från exempelvis en fastighet som saknar kommunal avloppsanslutning.</p><p>Vi arbetar med installation av minireningsverk och relaterade VA-arbeten, och hjälper dig att undersöka förutsättningarna för en lösning som passar din fastighet. Företaget finns listat som återförsäljare hos BioKube.</p></div><img class="reveal" src="assets/arbete-jordkallare.jpg" alt=""></section>
 <section class="section"><p class="eyebrow">Passar för</p><h2>När kan ett minireningsverk vara rätt val?</h2><ul class="checks cols">{''.join(f"<li>{x}</li>" for x in SERVICES[4]["when"])}</ul></section>
-<section class="section"><p class="eyebrow">Från förfrågan till färdig anläggning</p><h2>Så går det till</h2>{steps_html()}</section>
-<section class="section faq"><h2>Vanliga frågor</h2>{faq_html([FAQ[2],FAQ[3],FAQ[5]])}</section>''' + cta(b) + footer(b))
+<section class="sec dark"><p class="eyebrow">Från förfrågan till färdig anläggning</p><h2>Så går det till</h2>{steps_html()}</section>
+<section class="sec"><div class="fB"><div><h2>Vanliga frågor</h2><p>Hittar du inte svaret? Ring <a href="tel:+4631600162">{TEL}</a>.</p></div><div class="faq">{faq_html([FAQ[2],FAQ[3],FAQ[5]])}</div></div></section>''' + cta(b) + footer(b))
 
 # --- FAQ
 w("vanliga-fragor.html", head("Vanliga frågor – Fastighet & Avloppsteknik Väst AB","Svar på vanliga frågor om avlopp.",b) + header(b) +
   pagehero(b,"Vanliga frågor","Frågor om avlopp","Hittar du inte svaret? Ring eller skicka en förfrågan.","filmning.jpg",[("Start","index.html"),("Vanliga frågor",None)]) +
-  f'<section class="section faq">{faq_html(FAQ)}</section>' + cta(b) + footer(b))
+  f'<section class="sec"><div class="fB"><div><h2>Alla frågor</h2><p>Hittar du inte svaret? Ring <a href="tel:+4631600162">{TEL}</a>.</p></div><div class="faq">{faq_html(FAQ)}</div></div></section>' + cta(b) + footer(b))
 
 # --- Kontakt
 w("kontakt.html", head("Kontakt – Fastighet & Avloppsteknik Väst AB","Kontakta oss om avlopp.",b) + header(b) +
