@@ -53,6 +53,11 @@ def process(path):
     s = s.replace('<form class="form" action="mailto:kontakt@avloppfav.se" method="post" enctype="text/plain">', '<form class="form" data-mailto="kontakt@avloppfav.se">')
     # 6. Rubrikordning i footer
     s = re.sub(r'<h4>([^<]*)</h4>', r'<h2 class="ft-h">\1</h2>', s)
+    # 9. Förladda sidhuvudets bakgrundsbild (LCP på undersidor)
+    s = re.sub(r'<link rel="preload" as="image"[^>]*>', '', s)
+    m = re.search(r'class="page-hero" style="[^"]*url\(([^)]+)\)', s)
+    if m:
+        s = s.replace('</head>', f'<link rel="preload" as="image" href="{m.group(1)}" fetchpriority="high"></head>', 1)
     # 8. <main>-landmärke
     if '<main' not in s:
         s = s.replace('</header>', '</header><main id="main">', 1)
