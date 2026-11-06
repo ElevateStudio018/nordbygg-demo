@@ -21,82 +21,83 @@
   <button class="burger" id="burger" aria-label="Meny">☰</button>
 </header>
 
-<!-- HERO: helskärmsvideo från grävarbete -->
+<!-- HERO: växlar mellan tre klipp -->
 <section class="hero">
-  <video class="hero-media" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
-    <source src="assets/hero.mp4" type="video/mp4">
-  </video>
+  <div class="hero-videos" id="heroVideos">
+    <video class="hero-media on" muted playsinline autoplay poster="assets/hero-poster.jpg"><source src="assets/hero.mp4" type="video/mp4"></video>
+    <video class="hero-media" muted playsinline preload="none"><source src="assets/clip-2.mp4" type="video/mp4"></video>
+    <video class="hero-media" muted playsinline preload="none"><source src="assets/clip-3.mp4" type="video/mp4"></video>
+  </div>
   <div class="hero-overlay"></div>
-  <div class="hero-content">
+  <div class="wrap hero-content">
     <p class="eyebrow hero-in" style="--d:.1s">Fastighet &amp; Avloppsteknik Väst AB</p>
     <h1 class="hero-title"><span class="hero-in" style="--d:.25s">Vatten &amp; avlopp</span><span class="hero-in accent" style="--d:.45s">i Västsverige.</span></h1>
     <p class="hero-lead hero-in" style="--d:.65s">Vi hjälper dig med avloppsfilmning, spolning, renovering och installation av minireningsverk. Från felsökning till färdig lösning.</p>
     <div class="hero-cta hero-in" style="--d:.85s"><a href="#kontakt" class="hbtn">Begär offert <span>→</span></a><a href="tel:+4631600162" class="hlink">Ring 031-60 01 62</a></div>
   </div>
-  <a href="#tjanster" class="scroll-cue" aria-label="Scrolla ner"><span></span></a>
+  <div class="hero-dots" id="heroDots"><button class="on" aria-label="Klipp 1"></button><button aria-label="Klipp 2"></button><button aria-label="Klipp 3"></button></div>
 </section>
 
-<!-- Tjänster: bildkort -->
-<section class="section" id="tjanster">
-  <p class="eyebrow reveal">Tjänster</p>
-  <h2 class="reveal">Våra tjänster inom vatten &amp; avlopp</h2>
-  <p class="intro reveal">Från inspektion och underhåll till installation och renovering – vi hjälper dig att hitta rätt lösning för ditt avloppssystem.</p>
-  <div class="grid-3">
-    <a class="project reveal" href="tjanster/avloppsfilmning.html"><img src="assets/filmning.jpg" alt="Kamerainspektion av avlopp"><div><span>01</span><h3>Avloppsfilmning</h3><p>Med kamerainspektion av avloppsledningar går det att identifiera stopp, skador och andra problem i rörsystemet.</p></div></a>
-    <a class="project reveal" href="tjanster/avloppsspolning.html"><img src="assets/spolning.jpg" alt="Spolning av avloppsledning"><div><span>02</span><h3>Avloppsspolning</h3><p>Spolning av avloppsledningar för att avlägsna avlagringar, smuts och hinder som påverkar avloppssystemets funktion.</p></div></a>
-    <a class="project reveal" href="tjanster/avloppsrenovering.html"><img src="assets/arbete-ledningar.jpg" alt="Avloppsledningar"><div><span>03</span><h3>Avloppsrenovering</h3><p>Vi utför renovering av befintliga avloppssystem.</p></div></a>
-    <a class="project reveal" href="tjanster/byte-av-avloppsledningar.html"><img src="assets/arbete-graevning.jpg" alt="Grävning för nya ledningar"><div><span>04</span><h3>Byte av avloppsledningar</h3><p>När befintliga avloppsledningar inte längre fungerar som de ska kan ett byte vara nödvändigt.</p></div></a>
-    <a class="project reveal" href="tjanster/minireningsverk.html"><img src="assets/biokube.jpg" alt="Minireningsverk från BioKube"><div><span>05</span><h3>Minireningsverk</h3><p>Anläggning och installation av minireningsverk för enskilda avloppslösningar. Återförsäljare hos BioKube.</p></div></a>
-    <a class="project reveal" href="tjanster/service-och-underhall.html"><img src="assets/service.jpg" alt="Service av avloppsanläggning"><div><span>06</span><h3>Service &amp; underhåll</h3><p>Regelbunden service bidrar till att avloppssystem fungerar som de ska och kan minska risken för kostsamma problem.</p></div></a>
+<!-- 1. Tjänster (vit) -->
+<section class="blk" id="tjanster"><div class="wrap">
+  <header class="blk-head reveal"><div><p class="eyebrow">Tjänster</p><h2>Våra tjänster inom vatten &amp; avlopp</h2></div><p>Från inspektion och underhåll till installation och renovering – vi hjälper dig att hitta rätt lösning för ditt avloppssystem.</p></header>
+  <div class="svc-grid"><a class="svc-card reveal" href="tjanster/avloppsfilmning.html"><div class="ph"><img src="assets/filmning.jpg" alt="" loading="lazy"></div><h3>Avloppsfilmning</h3><p>Med kamerainspektion av avloppsledningar går det att identifiera stopp, skador och andra problem i rörsystemet.</p><span class="more">Läs mer →</span></a><a class="svc-card reveal" href="tjanster/avloppsspolning.html"><div class="ph"><img src="assets/spolning.jpg" alt="" loading="lazy"></div><h3>Avloppsspolning</h3><p>Spolning av avloppsledningar för att avlägsna avlagringar, smuts och hinder som påverkar avloppssystemets funktion.</p><span class="more">Läs mer →</span></a><a class="svc-card reveal" href="tjanster/avloppsrenovering.html"><div class="ph"><img src="assets/arbete-ledningar.jpg" alt="" loading="lazy"></div><h3>Avloppsrenovering</h3><p>Vi utför renovering av befintliga avloppssystem.</p><span class="more">Läs mer →</span></a><a class="svc-card reveal" href="tjanster/byte-av-avloppsledningar.html"><div class="ph"><img src="assets/arbete-graevning.jpg" alt="" loading="lazy"></div><h3>Byte av avloppsledningar</h3><p>När befintliga avloppsledningar inte längre fungerar som de ska kan ett byte vara nödvändigt.</p><span class="more">Läs mer →</span></a><a class="svc-card reveal" href="tjanster/minireningsverk.html"><div class="ph"><img src="assets/biokube.jpg" alt="" loading="lazy"></div><h3>Minireningsverk</h3><p>Vi arbetar med anläggning och installation av minireningsverk för enskilda avloppslösningar. Företaget finns listat som återförsäljare hos BioKube.</p><span class="more">Läs mer →</span></a><a class="svc-card reveal" href="tjanster/service-och-underhall.html"><div class="ph"><img src="assets/service.jpg" alt="" loading="lazy"></div><h3>Service & underhåll</h3><p>Regelbunden service och underhåll bidrar till att avloppssystem fungerar som de ska och kan minska risken för kostsamma problem.</p><span class="more">Läs mer →</span></a></div>
+  <a class="svc-wide reveal" href="tjanster/va-teknik.html"><div><h3>VA-teknik</h3><p>Vi erbjuder tjänster inom vatten- och avloppsteknik, inklusive installation, underhåll och åtgärder på befintliga avloppssystem.</p></div><span class="more">Läs mer →</span></a>
+</div></section>
+
+<!-- 2. Om oss (ljusgrå) -->
+<section class="blk soft" id="om-oss"><div class="wrap about">
+  <div class="about-media reveal">
+    <img class="a1" src="assets/arbete-maskiner.jpg" alt="Maskiner på arbetsplats">
+    <img class="a2" src="assets/arbete-graevning.jpg" alt="Grävarbete vid villa">
+    <div class="badge"><strong>Skepplanda</strong><span>Bas i Västra Götaland</span></div>
   </div>
-  <a href="tjanster/va-teknik.html" class="card wide reveal" style="display:block"><h3>VA-teknik →</h3><p>Vi erbjuder tjänster inom vatten- och avloppsteknik, inklusive installation, underhåll och åtgärder på befintliga avloppssystem.</p></a>
-</section>
+  <div class="about-text reveal">
+    <p class="eyebrow">Om oss</p>
+    <h2>Din partner inom avloppsteknik</h2>
+    <p class="big">Vi arbetar med installation, renovering, inspektion och underhåll av avloppssystem.</p>
+    <p>Fastighet &amp; Avloppsteknik Väst AB har sin bas i Skepplanda. Vi hjälper fastighetsägare att hitta fungerande lösningar för vatten och avlopp, oavsett om det handlar om att undersöka ett befintligt system eller installera en ny avloppsanläggning.</p>
+    <dl class="about-facts"><div><dt>Område</dt><dd>Västsverige</dd></div><div><dt>Återförsäljare</dt><dd>BioKube</dd></div><div><dt>Kontakt</dt><dd>Andreas Landström</dd></div></dl>
+    <a href="om-oss.html" class="btn-line">Mer om oss →</a>
+  </div>
+</div></section>
 
-<!-- Om oss -->
-<section class="split" id="om-oss">
-  <div class="reveal"><p class="eyebrow">Om oss</p><h2>Din partner inom avloppsteknik</h2>
-    <p>Fastighet &amp; Avloppsteknik Väst AB är ett företag med bas i Skepplanda som arbetar med installation, renovering, inspektion och underhåll av avloppssystem.</p>
-    <p>Vi hjälper fastighetsägare att hitta fungerande lösningar för vatten och avlopp, oavsett om det handlar om att undersöka ett befintligt system eller installera en ny avloppsanläggning.</p>
-    <a href="#kontakt" class="btn btn-outline">Kontakta oss</a></div>
-  <img class="reveal" src="assets/arbete-maskiner.jpg" alt="Maskiner på arbetsplats">
-</section>
+<!-- 3. Varför (vit) -->
+<section class="blk"><div class="wrap">
+  <header class="blk-head reveal"><div><p class="eyebrow">Varför välja oss</p><h2>Rätt lösning för ditt avloppssystem</h2></div></header>
+  <div class="num-grid"><div class="reveal"><span class="num">01</span><h3>Brett tjänsteutbud</h3><p>Från filmning och spolning till renovering och installation av kompletta avloppslösningar.</p></div><div class="reveal"><span class="num">02</span><h3>Anpassade lösningar</h3><p>Varje fastighet har sina egna förutsättningar. Därför utgår arbetet från anläggningens behov.</p></div><div class="reveal"><span class="num">03</span><h3>Från undersökning till åtgärd</h3><p>Vi arbetar med både felsökning, installation och underhåll av avloppssystem.</p></div><div class="reveal"><span class="num">04</span><h3>Lokal förankring</h3><p>Med bas i Skepplanda erbjuder vi tjänster inom vatten och avlopp i Västsverige.</p></div></div>
+</div></section>
 
-<!-- Varför välja oss (B) -->
-<section class="sec"><p class="eyebrow">Varför välja oss</p><h2>Rätt lösning för ditt avloppssystem</h2><div class="wB"><div class="reveal"><span>01</span><h3>Brett tjänsteutbud</h3><p>Från filmning och spolning till renovering och installation av kompletta avloppslösningar.</p></div><div class="reveal"><span>02</span><h3>Anpassade lösningar</h3><p>Varje fastighet har sina egna förutsättningar. Därför utgår arbetet från anläggningens behov.</p></div><div class="reveal"><span>03</span><h3>Från undersökning till åtgärd</h3><p>Vi arbetar med både felsökning, installation och underhåll av avloppssystem.</p></div><div class="reveal"><span>04</span><h3>Lokal förankring</h3><p>Med bas i Skepplanda erbjuder vi tjänster inom vatten och avlopp i Västsverige.</p></div></div></section>
+<!-- 4. Minireningsverk (bild) -->
+<section class="blk img" id="minireningsverk" style="background-image:linear-gradient(90deg,#0b1f33f5 0%,#0b1f33cc 45%,#0b1f3340 100%),url(assets/biokube.jpg)"><div class="wrap">
+  <div class="img-text reveal"><p class="eyebrow">Minireningsverk · BioKube-återförsäljare</p><h2>Moderna lösningar för enskilt avlopp</h2>
+  <p>Ett minireningsverk kan vara en effektiv lösning för fastigheter som saknar anslutning till kommunalt avlopp. Vi arbetar med installation av minireningsverk och relaterade VA-arbeten, och hjälper dig att undersöka förutsättningarna för en lösning som passar din fastighet.</p>
+  <a href="minireningsverk.html" class="hbtn">Läs mer <span>→</span></a></div>
+</div></section>
 
-<!-- Minireningsverk (B) -->
-<section class="mB" id="minireningsverk" style="background-image:linear-gradient(90deg,#0b1f33f5,#0b1f3360),url(assets/biokube.jpg)"><div class="reveal"><p class="eyebrow">Minireningsverk · BioKube-återförsäljare</p><h2>Moderna lösningar för enskilt avlopp</h2><p>Ett minireningsverk kan vara en effektiv lösning för fastigheter som saknar anslutning till kommunalt avlopp. Vi arbetar med installation av minireningsverk och relaterade VA-arbeten, och hjälper dig att undersöka förutsättningarna för en lösning som passar din fastighet.</p><a href="minireningsverk.html" class="btn">Läs mer om minireningsverk</a></div></section>
+<!-- 5. Arbetsgång (mörk) -->
+<section class="blk dark"><div class="wrap">
+  <header class="blk-head reveal"><div><p class="eyebrow">Arbetsgång</p><h2>Så går det till</h2></div></header>
+  <ol class="num-grid steps4"><li class="reveal"><span class="num">01</span><h3>Kontakta oss</h3><p>Berätta om ditt avloppssystem, din fastighet och vad du behöver hjälp med.</p></li><li class="reveal"><span class="num">02</span><h3>Vi går igenom behovet</h3><p>Vi diskuterar förutsättningarna och bedömer vilka åtgärder eller undersökningar som kan vara aktuella.</p></li><li class="reveal"><span class="num">03</span><h3>Förslag på lösning</h3><p>Du får information om lämpliga åtgärder och möjlighet att diskutera ett upplägg för arbetet.</p></li><li class="reveal"><span class="num">04</span><h3>Genomförande</h3><p>Vi utför det överenskomna arbetet med fokus på funktion och ett väl genomfört resultat.</p></li></ol>
+</div></section>
 
-<!-- Arbetsgång (D) -->
-<section class="sec dark"><p class="eyebrow">Arbetsgång</p><h2>Så går det till</h2><ol class="sD"><li class="reveal"><span>01</span><h3>Kontakta oss</h3><p>Berätta om ditt avloppssystem, din fastighet och vad du behöver hjälp med.</p></li><li class="reveal"><span>02</span><h3>Vi går igenom behovet</h3><p>Vi diskuterar förutsättningarna och bedömer vilka åtgärder eller undersökningar som kan vara aktuella.</p></li><li class="reveal"><span>03</span><h3>Förslag på lösning</h3><p>Du får information om lämpliga åtgärder och möjlighet att diskutera ett upplägg för arbetet.</p></li><li class="reveal"><span>04</span><h3>Genomförande</h3><p>Vi utför det överenskomna arbetet med fokus på funktion och ett väl genomfört resultat.</p></li></ol></section>
+<!-- 6. FAQ (vit) -->
+<section class="blk" id="faq"><div class="wrap fB">
+  <header class="reveal"><p class="eyebrow">Frågor &amp; svar</p><h2>Vanliga frågor</h2><p>Hittar du inte svaret? Ring <a href="tel:+4631600162">031-60 01 62</a>.</p></header>
+  <div class="faq"><details><summary>Vad kostar det att filma ett avlopp?</summary><p>Priset beror bland annat på ledningarnas omfattning och förutsättningarna på platsen. Kontakta oss för att beskriva ditt behov och få information om kostnaden.</p></details><details><summary>När behöver man spola avloppet?</summary><p>Avloppsspolning kan vara aktuellt vid återkommande stopp, långsam avrinning eller som en del av förebyggande underhåll.</p></details><details><summary>Vad är ett minireningsverk?</summary><p>Ett minireningsverk är en anläggning som renar avloppsvatten från exempelvis en fastighet som saknar kommunal avloppsanslutning.</p></details><details><summary>Kan ni installera enskilt avlopp?</summary><p>Ja, företaget arbetar med installation av minireningsverk och relaterade arbeten inom vatten och avlopp.</p></details><details><summary>Kan ni hjälpa till med gamla avloppsrör?</summary><p>Ja, företaget arbetar med filmning, renovering och byte av avloppssystem. Vilken åtgärd som är lämplig beror på ledningarnas skick.</p></details><details><summary>Vilka områden arbetar ni i?</summary><p>Vi har vår bas i Skepplanda i Västra Götaland. Kontakta oss för att kontrollera om vi kan hjälpa dig på din ort.</p></details></div>
+</div></section>
 
-<!-- FAQ (B) -->
-<section class="sec" id="faq"><div class="fB"><div><h2>Vanliga frågor</h2><p>Hittar du inte svaret? Ring <a href="tel:+4631600162">031-60 01 62</a>.</p></div><div class="faq"><details><summary>Vad kostar det att filma ett avlopp?</summary><p>Priset beror bland annat på ledningarnas omfattning och förutsättningarna på platsen. Kontakta oss för att beskriva ditt behov och få information om kostnaden.</p></details><details><summary>När behöver man spola avloppet?</summary><p>Avloppsspolning kan vara aktuellt vid återkommande stopp, långsam avrinning eller som en del av förebyggande underhåll.</p></details><details><summary>Vad är ett minireningsverk?</summary><p>Ett minireningsverk är en anläggning som renar avloppsvatten från exempelvis en fastighet som saknar kommunal avloppsanslutning.</p></details><details><summary>Kan ni installera enskilt avlopp?</summary><p>Ja, företaget arbetar med installation av minireningsverk och relaterade arbeten inom vatten och avlopp.</p></details><details><summary>Kan ni hjälpa till med gamla avloppsrör?</summary><p>Ja, företaget arbetar med filmning, renovering och byte av avloppssystem. Vilken åtgärd som är lämplig beror på ledningarnas skick.</p></details><details><summary>Vilka områden arbetar ni i?</summary><p>Vi har vår bas i Skepplanda i Västra Götaland. Kontakta oss för att kontrollera om vi kan hjälpa dig på din ort.</p></details></div></div></section>
-
-<!-- Kontakt -->
-<section class="contact" id="kontakt">
-  <div class="reveal">
-    <p class="eyebrow">Kontakt</p>
-    <h2>Begär offert</h2>
+<!-- 7. Offert (ljusgrå) -->
+<section class="blk soft" id="kontakt"><div class="wrap offert">
+  <div class="reveal"><p class="eyebrow">Offertförfrågan</p><h2>Begär offert</h2>
     <p>Oavsett om du behöver undersöka ett avloppssystem, åtgärda ett problem eller installera en ny anläggning är du välkommen att kontakta oss.</p>
-    <dl>
-      <dt>Telefon</dt><dd><a href="tel:+4631600162">031-60 01 62</a></dd>
-      <dt>Mobil</dt><dd><a href="tel:+46709149718">070-914 97 18</a></dd>
-      <dt>E-post</dt><dd><a href="mailto:kontakt@avloppfav.se">kontakt@avloppfav.se</a></dd>
-      <dt>Adress</dt><dd>Ryk 255, 446 92 Skepplanda</dd>
-      <dt>Kontaktperson</dt><dd>Andreas Landström</dd>
-    </dl>
-  </div>
-  <form class="form reveal" action="mailto:kontakt@avloppfav.se" method="post" enctype="text/plain">
-    <label>Namn<input name="Namn" required></label>
-    <label>Telefonnummer<input name="Telefon" type="tel"></label>
-    <label>E-postadress<input name="E-post" type="email" required></label>
-    <label>Typ av tjänst<select name="Tjänst"><option value="">Välj tjänst</option><option>Avloppsfilmning</option><option>Avloppsspolning</option><option>Avloppsrenovering</option><option>Byte av avloppsledningar</option><option>Minireningsverk</option><option>Service och underhåll</option><option>Övrigt</option></select></label>
-    <label>Ort<input name="Ort"></label>
-    <label class="full">Beskrivning av ärendet<textarea name="Beskrivning" rows="4"></textarea></label>
-    <button class="btn full" type="submit">Skicka offertförfrågan</button>
-  </form>
-</section>
+    <dl class="kdl"><dt>Telefon</dt><dd><a href="tel:+4631600162">031-60 01 62</a></dd><dt>Mobil</dt><dd><a href="tel:+46709149718">070-914 97 18</a></dd><dt>E-post</dt><dd><a href="mailto:kontakt@avloppfav.se">kontakt@avloppfav.se</a></dd><dt>Adress</dt><dd>Ryk 255, 446 92 Skepplanda</dd><dt>Kontaktperson</dt><dd>Andreas Landström</dd></dl></div>
+  <div class="reveal"><form class="form" action="mailto:kontakt@avloppfav.se" method="post" enctype="text/plain">
+<label>Namn<input name="Namn" required></label><label>Telefonnummer<input name="Telefon" type="tel"></label>
+<label>E-postadress<input name="E-post" type="email" required></label><label>Typ av tjänst<select name="Tjänst"><option value="">Välj tjänst</option><option>Avloppsfilmning</option><option>Avloppsspolning</option><option>Avloppsrenovering</option><option>Byte av avloppsledningar</option><option>Minireningsverk</option><option>Service & underhåll</option><option>VA-teknik</option><option>Övrigt</option></select></label>
+<label class="full">Ort<input name="Ort"></label><label class="full">Beskrivning av ärendet<textarea name="Beskrivning" rows="5"></textarea></label>
+<button class="btn full" type="submit">Skicka offertförfrågan</button></form></div>
+</div></section>
 
 <footer class="footer ftAE"><div><strong>Fastighet &amp; Avloppsteknik Väst AB</strong><p>Avloppsteknik, VA-installationer och avloppsrening med bas i Skepplanda, Västra Götaland.</p><p>Org.nr 559368-4011</p></div>
 <div><h4>Tjänster</h4><a href="tjanster/avloppsfilmning.html">Avloppsfilmning</a><a href="tjanster/avloppsspolning.html">Avloppsspolning</a><a href="tjanster/avloppsrenovering.html">Avloppsrenovering</a><a href="tjanster/byte-av-avloppsledningar.html">Byte av avloppsledningar</a><a href="tjanster/minireningsverk.html">Minireningsverk</a><a href="tjanster/service-och-underhall.html">Service & underhåll</a><a href="tjanster/va-teknik.html">VA-teknik</a></div>
