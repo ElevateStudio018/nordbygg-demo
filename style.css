@@ -302,3 +302,6 @@ img{height:auto}
 .facts span,.about-facts dt{color:#4b5b6b}
 .split img{aspect-ratio:4/3;object-fit:cover;width:100%}
 .gallery img{height:auto}
+/* Knappar har alltid mörk accent bakom vit text (kontrast ≥ 4.5) */
+.btn:not(.btn-outline):not(.btn-ghost):not(.btn-outline-light){background:#0071ad;color:#fff}
+.btn:not(.btn-outline):not(.btn-ghost):not(.btn-outline-light):hover{background:#005a8c}
