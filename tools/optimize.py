@@ -19,7 +19,7 @@ def css_for(base):
 
 def srcset(name, base):
     w,h = IMG[name]
-    return f'src="{base}assets/img/{name}-960.webp" srcset="{base}assets/img/{name}-480.webp 480w, {base}assets/img/{name}-960.webp 960w" sizes="(max-width:700px) 92vw, 33vw" width="{w}" height="{h}"'
+    return f'src="{base}assets/img/{name}-960.webp" srcset="{base}assets/img/{name}-480.webp 480w, {base}assets/img/{name}-720.webp 720w, {base}assets/img/{name}-960.webp 960w" sizes="(max-width:700px) 92vw, (max-width:1100px) 45vw, 400px" width="{w}" height="{h}"'
 
 def process(path):
     base = '../' if os.sep+'tjanster'+os.sep in path else ''

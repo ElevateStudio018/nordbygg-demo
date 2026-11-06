@@ -290,3 +290,11 @@ img{max-width:100%;display:block}
 .hero-still{z-index:0}
 .hero-videos video{z-index:1}
 .logo img{width:auto}
+
+/* Tillgänglig kontrast: mörkare accent på ljus botten, ljus accent på mörk */
+:root{--accent:#0071ad}
+.hero,.blk.dark,.blk.img,.footer,.page-hero,.why,.side-card:not(.light),.sec.dark{--accent:#3dbbf2}
+.hero .eyebrow,.page-hero .eyebrow{color:var(--accent)}
+.hbtn:hover{background:#3dbbf2;border-color:#3dbbf2;color:#0b1f33}
+/* Ingen fördröjd intro-animation i heron (snabbare Speed Index) */
+.hero-in{animation:none;opacity:1;transform:none}
