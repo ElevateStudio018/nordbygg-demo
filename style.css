@@ -298,3 +298,7 @@ img{max-width:100%;display:block}
 .hbtn:hover{background:#3dbbf2;border-color:#3dbbf2;color:#0b1f33}
 /* Ingen fördröjd intro-animation i heron (snabbare Speed Index) */
 .hero-in{animation:none;opacity:1;transform:none}
+img{height:auto}
+.facts span,.about-facts dt{color:#4b5b6b}
+.split img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.gallery img{height:auto}
