@@ -22,17 +22,20 @@
   <button class="burger" id="burger" aria-label="Meny">☰</button>
 </header>
 
-<!-- Hero med bakgrundsvideo (licensfri, Pexels) + bild som fallback -->
+<!-- HERO: helskärmsvideo från Pexels (licensfri), stor typografi -->
 <section class="hero">
   <video class="hero-media" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=70">
-    <source src="https://videos.pexels.com/video-files/2048246/2048246-uhd_2560_1440_24fps.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/1197802/1197802-hd_1920_1080_25fps.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/2048246/2048246-hd_1920_1080_24fps.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-content reveal">
-    <p class="eyebrow">Bygg · Fastigheter · Infrastruktur</p>
-    <h1>Vi bygger samhällen<br>som håller i generationer</h1>
-    <a href="#projekt" class="btn">Se våra projekt →</a>
+  <div class="hero-content">
+    <p class="eyebrow hero-in" style="--d:.1s">Bygg · Fastigheter · Infrastruktur</p>
+    <h1 class="hero-title"><span class="hero-in" style="--d:.25s">Vi bygger</span><span class="hero-in accent" style="--d:.45s">framtiden.</span></h1>
+    <p class="hero-lead hero-in" style="--d:.65s">Från första spadtag till färdig stadsdel – 340 projekt pågår just nu i hela Norden.</p>
+    <div class="hero-cta hero-in" style="--d:.85s"><a href="#projekt" class="btn btn-lg">Se våra projekt →</a><a href="#kontakt" class="btn btn-ghost btn-lg">Kontakta oss</a></div>
   </div>
+  <a href="#tjanster" class="scroll-cue" aria-label="Scrolla ner"><span></span></a>
 </section>
 
 <!-- Tjänster: enkelt rutnät med tre kort -->
