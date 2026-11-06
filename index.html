@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nordbygg AB – Vi bygger för framtiden (demo)</title>
+<!-- Fria typsnitt från Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- DEMO-BANNER: tydlig markering att sajten är fiktiv -->
+<div class="demo-banner" role="note">⚠️ FIKTIV DEMO – Nordbygg AB finns inte. Pedagogiskt projekt, ej ett riktigt företag.</div>
+
+<!-- Sticky header: blir solid när man scrollar (se script.js) -->
+<header class="site-header" id="header">
+  <a class="logo" href="#"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path d="M4 28V12L16 4l12 8v16h-8v-9h-8v9z" fill="currentColor"/></svg>Nordbygg</a>
+  <nav class="nav" id="nav">
+    <a href="#tjanster">Tjänster</a><a href="#projekt">Projekt</a><a href="#hallbarhet">Hållbarhet</a><a href="#nyheter">Nyheter</a><a href="#kontakt" class="btn btn-sm">Kontakt</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Meny">☰</button>
+</header>
+
+<!-- Hero med bakgrundsvideo (licensfri, Pexels) + bild som fallback -->
+<section class="hero">
+  <video class="hero-media" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=70">
+    <source src="https://videos.pexels.com/video-files/2048246/2048246-uhd_2560_1440_24fps.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content reveal">
+    <p class="eyebrow">Bygg · Fastigheter · Infrastruktur</p>
+    <h1>Vi bygger samhällen<br>som håller i generationer</h1>
+    <a href="#projekt" class="btn">Se våra projekt →</a>
+  </div>
+</section>
+
+<!-- Tjänster: enkelt rutnät med tre kort -->
+<section class="section" id="tjanster">
+  <h2 class="reveal">Vad vi gör</h2>
+  <div class="grid-3">
+    <article class="card reveal"><h3>Husbyggnad</h3><p>Bostäder, skolor och kontor med fokus på kvalitet och energieffektivitet.</p></article>
+    <article class="card reveal"><h3>Infrastruktur</h3><p>Vägar, broar och tunnlar som binder samman regioner.</p></article>
+    <article class="card reveal"><h3>Fastighetsutveckling</h3><p>Från idé till färdig stadsdel – vi utvecklar hållbara miljöer.</p></article>
+  </div>
+</section>
+
+<!-- Siffror som räknas upp när de syns (script.js) -->
+<section class="stats">
+  <div><span class="count" data-target="1200">0</span><p>Medarbetare</p></div>
+  <div><span class="count" data-target="340">0</span><p>Pågående projekt</p></div>
+  <div><span class="count" data-target="45">0</span><p>År i branschen</p></div>
+  <div><span class="count" data-target="60">0</span><p>% lägre CO₂ sedan 2015</p></div>
+</section>
+
+<!-- Projektkort med bild, hover-zoom -->
+<section class="section" id="projekt">
+  <h2 class="reveal">Utvalda projekt</h2>
+  <div class="grid-3">
+    <a class="project reveal" href="#"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=70" alt="Kontorshus i glas"><div><span>Kontor</span><h3>Kvarteret Glasblåsaren</h3></div></a>
+    <a class="project reveal" href="#"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=70" alt="Bostadshus"><div><span>Bostäder</span><h3>Strandängen etapp 2</h3></div></a>
+    <a class="project reveal" href="#"><img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&q=70" alt="Bro"><div><span>Infrastruktur</span><h3>Älvbron Norra</h3></div></a>
+  </div>
+</section>
+
+<!-- Split-sektion: text + bild -->
+<section class="split" id="hallbarhet">
+  <div class="reveal"><p class="eyebrow">Hållbarhet</p><h2>Klimatneutralt till 2040</h2><p>Vi minskar utsläppen i hela värdekedjan – från cement och stål till transporter på byggarbetsplatsen.</p><a href="#" class="btn btn-outline">Läs mer</a></div>
+  <img class="reveal" src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=70" alt="Trähus">
+</section>
+
+<!-- Nyheter -->
+<section class="section" id="nyheter">
+  <h2 class="reveal">Nyheter</h2>
+  <ul class="news">
+    <li class="reveal"><time>2026-10-28</time><a href="#">Nordbygg tecknar avtal om ny skola i Lunden</a></li>
+    <li class="reveal"><time>2026-10-14</time><a href="#">Delårsrapport: stark orderingång i Norden</a></li>
+    <li class="reveal"><time>2026-09-30</time><a href="#">Fossilfri byggarbetsplats tas i drift</a></li>
+  </ul>
+</section>
+
+<footer class="footer" id="kontakt">
+  <div><strong>Nordbygg AB</strong><p>Fiktiv adress 1<br>123 45 Exempelstad</p></div>
+  <div><h4>Företaget</h4><a href="#">Om oss</a><a href="#">Karriär</a><a href="#">Investerare</a></div>
+  <div><h4>Kontakt</h4><a href="#">info@exempel.invalid</a><a href="#">Press</a></div>
+  <p class="fine">© 2026 Nordbygg AB – fiktivt företag skapat i utbildningssyfte.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
