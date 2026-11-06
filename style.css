@@ -151,3 +151,12 @@ img{max-width:100%;display:block}
 .hbtn:hover span{transform:translateX(5px)}
 .hlink{color:#fff;font-weight:500;border-bottom:1px solid #ffffff80;padding-bottom:2px}
 .hlink:hover{border-color:#fff}
+
+/* Heroknappar v3: rundade, moderna – pil i cirkel + glas-knapp */
+.hbtn{border-radius:999px;padding:.45rem .45rem .45rem 1.6rem;gap:1rem;font-size:1rem;box-shadow:0 8px 24px #00a3e040}
+.hbtn span{display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:50%;background:#fff;color:var(--accent);font-size:1.1rem}
+.hbtn:hover{background:#fff;color:var(--ink);box-shadow:0 8px 24px #0003}
+.hbtn:hover span{background:var(--accent);color:#fff;transform:translateX(3px) rotate(-45deg)}
+.hlink{display:inline-flex;align-items:center;gap:.6rem;border:1px solid #ffffff40;background:#ffffff14;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:999px;padding:.95rem 1.4rem;transition:.2s}
+.hlink::before{content:"";width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px #3ddc8433}
+.hlink:hover{background:#ffffff26;border-color:#ffffff80}
