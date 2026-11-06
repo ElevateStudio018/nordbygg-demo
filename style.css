@@ -53,3 +53,21 @@ img{max-width:100%;display:block}
   .burger{display:block}
   .split{grid-template-columns:1fr}
 }
+
+/* === Fet hero === */
+.hero{align-items:center}
+.hero-overlay{background:linear-gradient(90deg,#0b1f33f0 0%,#0b1f33aa 45%,#0b1f3322 100%),linear-gradient(0deg,#0b1f33cc,#0000 40%)}
+.hero-content{padding:0 5vw;max-width:1200px}
+.hero-title{font-size:clamp(3.2rem,11vw,9.5rem);line-height:.92;letter-spacing:-.04em;margin:1rem 0 1.5rem;text-transform:uppercase}
+.hero-title span{display:block}
+.hero-title .accent{color:transparent;-webkit-text-stroke:2px #fff}
+.hero-lead{font-size:clamp(1.05rem,1.6vw,1.35rem);max-width:560px;opacity:.9;margin-bottom:2.2rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-lg{padding:1.1rem 2rem;font-size:1.05rem}
+.btn-ghost{background:#fff1;border:2px solid #fff8;backdrop-filter:blur(6px)}
+.hero-in{opacity:0;transform:translateY(40px);animation:heroIn .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d)}
+@keyframes heroIn{to{opacity:1;transform:none}}
+.scroll-cue{position:absolute;bottom:5.5rem;left:50%;width:28px;height:46px;border:2px solid #fffa;border-radius:20px;transform:translateX(-50%)}
+.scroll-cue span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;background:#fff;border-radius:2px;animation:cue 1.6s infinite}
+@keyframes cue{to{transform:translateY(16px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero-in{animation:none;opacity:1;transform:none}}
