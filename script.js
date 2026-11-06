@@ -40,7 +40,7 @@ function countUp(el) {
   };
   vids.forEach(v => v.addEventListener('ended', () => show((i + 1) % vids.length)));
   dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
-  const start = () => setTimeout(() => show(0), 1500);
+  const start = () => setTimeout(() => show(0), innerWidth < 900 ? 4000 : 1500);
   document.readyState === 'complete' ? start() : addEventListener('load', start);
 })();
 // 6. Formulär: öppnar e-post med ifyllda uppgifter
