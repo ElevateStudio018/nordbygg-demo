@@ -284,3 +284,9 @@ img{max-width:100%;display:block}
   .site-header{min-height:72px}.logo img{height:54px}
 }
 @media (max-width:560px){.svc-grid,.num-grid,.about-facts{grid-template-columns:1fr}}
+
+/* PageSpeed-justeringar */
+.ft-h{font-size:1rem;font-family:Inter,sans-serif;font-weight:600;color:#fff;margin:0 0 .5rem}
+.hero-still{z-index:0}
+.hero-videos video{z-index:1}
+.logo img{width:auto}
