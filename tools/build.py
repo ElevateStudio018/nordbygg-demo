@@ -64,7 +64,7 @@ def head(title, desc, base, extra=""):
 
 def header(base, solid=True):
     return f'''<header class="site-header{' solid always' if solid else ''}" id="header">
-<a class="logo" href="{base}index.html"><img src="{base}assets/logo-transparent.png" alt="" width="36" height="36"><span>Avloppsteknik Väst</span></a>
+<a class="logo" href="{base}index.html"><img src="{base}assets/logo-transparent.png" alt="Fastighet &amp; Avloppsteknik Väst AB" width="114" height="64"></a>
 <nav class="nav" id="nav"><div class="dd"><a href="{base}tjanster.html">Tjänster ▾</a><div class="dd-menu">{''.join(f'<a href="{base}tjanster/{s["slug"]}.html">{s["name"]}</a>' for s in SERVICES)}</div></div>
 <a href="{base}om-oss.html">Om oss</a><a href="{base}minireningsverk.html">Minireningsverk</a><a href="{base}vanliga-fragor.html">Frågor</a><a href="{base}kontakt.html" class="btn btn-sm">Kontakt</a></nav>
 <button class="burger" id="burger" aria-label="Meny">☰</button></header>'''
