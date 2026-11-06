@@ -142,3 +142,12 @@ img{max-width:100%;display:block}
 .mB>div{max-width:640px}
 .mB h2{font-size:clamp(2rem,4.5vw,3.4rem);margin:.6rem 0 1rem}
 .mB p{margin-bottom:2rem;opacity:.92}
+
+/* Heroknappar: rak, solid knapp + textlänk */
+.hero-cta{align-items:center;gap:2rem}
+.hbtn{display:inline-flex;align-items:center;gap:1.2rem;background:var(--accent);color:#fff;font-family:Manrope;font-weight:800;font-size:1.05rem;padding:1.15rem 1.6rem 1.15rem 1.8rem;border-radius:2px;transition:background .2s}
+.hbtn span{display:inline-block;transition:transform .2s}
+.hbtn:hover{background:#fff;color:var(--ink)}
+.hbtn:hover span{transform:translateX(5px)}
+.hlink{color:#fff;font-weight:500;border-bottom:1px solid #ffffff80;padding-bottom:2px}
+.hlink:hover{border-color:#fff}

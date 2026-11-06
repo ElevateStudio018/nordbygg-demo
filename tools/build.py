@@ -80,7 +80,7 @@ def pagehero(base, eyebrow, title, lead, img, crumbs):
     c = ' / '.join(f'<a href="{base}{u}">{n}</a>' if u else n for n,u in crumbs)
     return f'''<section class="page-hero" style="background-image:linear-gradient(90deg,#0b1f33f2,#0b1f3399 55%,#0b1f3340),url('{base}assets/{img}')"><div class="page-hero-in">
 <nav class="crumbs">{c}</nav><p class="eyebrow">{eyebrow}</p><h1>{title}</h1><p class="lead">{lead}</p>
-<div class="hero-cta"><a href="{base}kontakt.html" class="btn btn-lg">Begär offert →</a><a href="tel:+4631600162" class="btn btn-ghost btn-lg">Ring {TEL}</a></div></div></section>'''
+<div class="hero-cta"><a href="#offert" class="hbtn">Begär offert <span>→</span></a><a href="tel:+4631600162" class="hlink">eller ring {TEL}</a></div></div></section>'''
 
 def cta(base, selected=""):
     return f'''<section class="offert" id="offert"><div><p class="eyebrow">Offertförfrågan</p><h2>Begär offert</h2><p>Beskriv ditt ärende så återkommer vi. Du kan också ringa oss direkt.</p><a class="big" href="tel:+4631600162">{TEL}</a><p>Mobil {MOB} · <a href="mailto:{MAIL}">{MAIL}</a></p></div>{form_html(selected).replace("Skicka förfrågan","Skicka offertförfrågan")}</section>'''
@@ -146,6 +146,6 @@ w("vanliga-fragor.html", head("Vanliga frågor – Fastighet & Avloppsteknik Vä
 # --- Kontakt
 w("kontakt.html", head("Kontakt – Fastighet & Avloppsteknik Väst AB","Kontakta oss om avlopp.",b) + header(b) +
   pagehero(b,"Kontakt","Behöver du hjälp med ditt avlopp?","Oavsett om du behöver undersöka ett avloppssystem, åtgärda ett problem eller installera en ny anläggning är du välkommen att kontakta oss.","service.jpg",[("Start","index.html"),("Kontakt",None)]) +
-  f'''<section class="contact"><div class="reveal"><dl><dt>Telefon</dt><dd><a href="tel:+4631600162">{TEL}</a></dd><dt>Mobil</dt><dd><a href="tel:+46709149718">{MOB}</a></dd><dt>E-post</dt><dd><a href="mailto:{MAIL}">{MAIL}</a></dd><dt>Adress</dt><dd>{ADR}</dd><dt>Kontaktperson</dt><dd>Andreas Landström</dd><dt>Org.nr</dt><dd>559368-4011</dd></dl>
+  f'''<section class="contact" id="offert"><div class="reveal"><dl><dt>Telefon</dt><dd><a href="tel:+4631600162">{TEL}</a></dd><dt>Mobil</dt><dd><a href="tel:+46709149718">{MOB}</a></dd><dt>E-post</dt><dd><a href="mailto:{MAIL}">{MAIL}</a></dd><dt>Adress</dt><dd>{ADR}</dd><dt>Kontaktperson</dt><dd>Andreas Landström</dd><dt>Org.nr</dt><dd>559368-4011</dd></dl>
 <iframe class="map" title="Karta Skepplanda" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=12.00%2C57.95%2C12.12%2C58.00&amp;layer=mapnik"></iframe></div><div class="reveal">{form_html()}</div></section>''' + footer(b))
 print("pages ok")
